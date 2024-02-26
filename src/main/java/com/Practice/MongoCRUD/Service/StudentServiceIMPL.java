@@ -37,7 +37,7 @@ public class StudentServiceIMPL implements StudentService{
     }
 
     @Override
-    public StudentResponse showStudent(Long studentId) {
+    public StudentResponse showStudent(String studentId) {
 
         Students students = studentRepository.findById(studentId).orElseThrow(()->new RuntimeException("StudentID Doesnt Exist"));
 
@@ -58,7 +58,7 @@ public class StudentServiceIMPL implements StudentService{
     }
 
     @Override
-    public List<Students> deleteStudent(Long studentId) {
+    public List<Students> deleteStudent(String studentId) {
 
         Students students = studentRepository.findById(studentId).orElseThrow(()->new RuntimeException("StudentID Doesnt Exist"));
 

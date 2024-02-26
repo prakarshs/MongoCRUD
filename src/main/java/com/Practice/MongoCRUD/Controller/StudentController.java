@@ -24,7 +24,7 @@ public class StudentController {
     }
 
     @GetMapping("/show/{studentId}")
-    private ResponseEntity<StudentResponse> showStudent(@PathVariable Long studentId){
+    private ResponseEntity<StudentResponse> showStudent(@PathVariable String studentId){
         return new ResponseEntity<>(studentService.showStudent(studentId), HttpStatus.OK);
     }
     @GetMapping("/show")
@@ -32,7 +32,7 @@ public class StudentController {
         return new ResponseEntity<>(studentService.showAllStudents(), HttpStatus.OK);
     }
     @DeleteMapping("/delete/{studentId}")
-    private ResponseEntity<List<Students>> deleteStudent(@PathVariable Long studentId){
+    private ResponseEntity<List<Students>> deleteStudent(@PathVariable String studentId){
         return new ResponseEntity<>(studentService.deleteStudent(studentId), HttpStatus.OK);
     }
 

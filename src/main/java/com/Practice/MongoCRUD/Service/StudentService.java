@@ -9,9 +9,9 @@ import java.util.List;
 public interface StudentService {
     StudentResponse addStudent(StudentRequest studentRequest);
 
-    StudentResponse showStudent(Long studentId);
+    StudentResponse showStudent(String studentId);
 
     List<Students> showAllStudents();
 
-    List<Students> deleteStudent(Long studentId);
+    List<Students> deleteStudent(String studentId);
 }
