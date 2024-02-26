@@ -5,6 +5,8 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
+
 @Document(collection = "student_details")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
@@ -16,4 +18,5 @@ public class Students {
     private Long studentId;
     private String studentName;
     private Long studentAge;
+    private Date studentAddTime;
 }
