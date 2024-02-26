@@ -13,7 +13,7 @@ import java.util.Date;
 @Builder
 public class StudentResponse {
     private String message;
-    private Long studentId;
+    private String studentId;
     private String studentName;
     private Long studentAge;
     private Date studentAddTime;

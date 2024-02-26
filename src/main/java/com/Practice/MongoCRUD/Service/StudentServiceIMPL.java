@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class StudentServiceIMPL implements StudentService{
@@ -47,5 +48,22 @@ public class StudentServiceIMPL implements StudentService{
                 .studentAge(students.getStudentAge())
                 .studentAddTime(students.getStudentAddTime())
                 .build();
+    }
+
+    @Override
+    public List<Students> showAllStudents() {
+
+        List<Students> studentsList = studentRepository.findAll().stream().toList();
+        return studentsList;
+    }
+
+    @Override
+    public List<Students> deleteStudent(Long studentId) {
+
+        Students students = studentRepository.findById(studentId).orElseThrow(()->new RuntimeException("StudentID Doesnt Exist"));
+
+        studentRepository.delete(students);
+
+        return studentRepository.findAll().stream().toList();
     }
 }

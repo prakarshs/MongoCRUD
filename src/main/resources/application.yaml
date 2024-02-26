@@ -1,6 +1,9 @@
 spring:
   data:
     mongodb:
+      username: root
+      password: root
+      authentication-database: admin
       database: basicCrud
       port: 27017
       host: localhost
